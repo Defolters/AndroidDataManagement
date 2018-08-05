@@ -11,9 +11,9 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="introduction">Hello!\nThis app will show you different ways of managing data in android</string>
-    <string name="assets_text">Assets is a data in apk of your application\n\nPros: Always packaged with application\n\nCons: You can\'t modify it\n\nYou can use it for purpose, when you need some data (text files, images, songs) available from the box.</string>
-    <string name="internal_text">Internal storage allows you to store data of your application</string>
-    <string name="external_text">External</string>
+    <string name="assets_text">Assets is a data in apk of your application\n\nPros: Always packaged with application\n\nCons: You can\'t modify it\n\nYou can use it for purpose, when you need some data (text files, images, songs) available from the box.\n\nIn this example you can display directory and load file from assets.</string>
+    <string name="internal_text">Internal storage allows you to store data of your application. This data are private by default.\n\nPros: Always packaged with application\n\nCons: You can\'t modify it\n\nIn this example you can create file in internal storage and then open it. Additionally, you can create cache file in internal storage. You can try delete cache from phone settings.</string>
+    <string name="external_text">External storage is placed on sdcard.</string>
     <string name="lrucache_text">LRUCache is </string>
     <string name="shared_preferences_text">Shared preferences</string>
     <string name="sqlite_text">SQLite</string>
