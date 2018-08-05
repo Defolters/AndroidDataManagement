@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Android Data Managment</string>
+    <string name="tab_text_1">Introduction</string>
+    <string name="tab_text_2">Assets</string>
+    <string name="tab_text_3">Internal storage</string>
+    <string name="tab_text_4">External Storage</string>
+    <string name="tab_text_5">LRU Cache</string>
+    <string name="tab_text_6">Shared preferences</string>
+    <string name="tab_text_7">SQLite</string>
+    <string name="tab_text_8">Content Provider</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="introduction">Hello!\nThis app will show you different ways of managing data in android</string>
+    <string name="assets_text">Assets is a data in apk of your application\n\nPros: Always packaged with application\n\nCons: You can\'t modify it\n\nYou can use it for purpose, when you need some data (text files, images, songs) available from the box.</string>
+    <string name="internal_text">Internal storage allows you to store data of your application</string>
+    <string name="external_text">External</string>
+    <string name="lrucache_text">LRUCache is </string>
+    <string name="shared_preferences_text">Shared preferences</string>
+    <string name="sqlite_text">SQLite</string>
+    <string name="content_provider_text">Content provider</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragments</string>
+</resources>
