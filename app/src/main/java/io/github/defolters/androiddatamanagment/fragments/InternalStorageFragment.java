@@ -44,11 +44,11 @@ public class InternalStorageFragment extends Fragment {
 
         final TextView filesPath = view.findViewById(R.id.internal_files_path);
         final File filesDir = getActivity().getFilesDir();
-        filesPath.setText("Files dir: "+ filesDir);
+        filesPath.setText("Files location: "+ filesDir);
 
         final TextView cacheFilesPath = view.findViewById(R.id.internal_cache_path);
         final File cacheFilesDir = getActivity().getCacheDir();
-        cacheFilesPath.setText("Cache files dir: "+ cacheFilesDir);
+        cacheFilesPath.setText("Cache location: "+ cacheFilesDir);
 
         final Button createFile = view.findViewById(R.id.internal_create_file_button);
         createFile.setOnClickListener(new View.OnClickListener() {
@@ -66,6 +66,14 @@ public class InternalStorageFragment extends Fragment {
             }
         });
 
+        final Button deleteFile = view.findViewById(R.id.internal_delete_file_button);
+        deleteFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteFileDialog(filesDir);
+            }
+        });
+
         final Button createCacheFile = view.findViewById(R.id.internal_create_cache_button);
         createCacheFile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +87,14 @@ public class InternalStorageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 openFileDialog(cacheFilesDir);
+            }
+        });
+
+        final Button deleteCacheFile = view.findViewById(R.id.internal_delete_cache_button);
+        deleteCacheFile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                deleteFileDialog(cacheFilesDir);
             }
         });
 
@@ -159,6 +175,39 @@ public class InternalStorageFragment extends Fragment {
         alertDialog.show();
     }
 
+    private void deleteFileDialog(final File path) {
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
+        alertDialog.setTitle("Select file");
+
+        final String[] files = path.list(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                if (name.endsWith(".txt")) {
+                    return true;
+                }
+                return false;
+            }
+        });
+
+        alertDialog.setItems(files, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                File file = new File(path,files[which]);
+                if (file.delete()) {
+                    Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            files[which] + " deleted",
+                            Snackbar.LENGTH_LONG).show();
+                } else {
+                    Snackbar.make(getActivity().findViewById(android.R.id.content),
+                            files[which] + " not deleted",
+                            Snackbar.LENGTH_LONG).show();
+                }
+
+            }
+        });
+        alertDialog.show();
+    }
+
     private void createFile(final File path, String name, String text) {
         try {
             File file = new File(path, name+".txt");
@@ -171,5 +220,4 @@ public class InternalStorageFragment extends Fragment {
 
         }
     }
-
 }

@@ -19,14 +19,16 @@
             android:layout_marginEnd="10dp" />
 
         <TextView
-            android:id="@+id/internal_files_path"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" />
+            android:text="Internal directory for app"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:paddingTop="10dp"
+            android:gravity="center" />
 
         <TextView
-            android:id="@+id/internal_cache_path"
+            android:id="@+id/internal_files_path"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
@@ -42,15 +44,37 @@
                 android:id="@+id/internal_create_file_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="create text file"/>
+                android:text="create txt file"/>
 
             <Button
                 android:id="@+id/internal_open_file_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="open text file"/>
+                android:text="open file"/>
+
+            <Button
+                android:id="@+id/internal_delete_file_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="delete file"/>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Internal directory for app's temporary cache files"
+            android:textColor="@android:color/black"
+            android:textSize="18sp"
+            android:paddingTop="10dp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/internal_cache_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -62,13 +86,19 @@
                 android:id="@+id/internal_create_cache_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="create text cache file"/>
+                android:text="create cache file"/>
 
             <Button
                 android:id="@+id/internal_open_cache_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="open text cache file"/>
+                android:text="open file"/>
+
+            <Button
+                android:id="@+id/internal_delete_cache_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="delete file"/>
 
         </LinearLayout>
 

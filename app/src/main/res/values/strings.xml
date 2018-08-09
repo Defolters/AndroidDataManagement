@@ -15,9 +15,10 @@
     <string name="internal_text">Internal storage allows you to store data of your application. This data are private by default.\n\nPros: Always packaged with application\n\nCons: You can\'t modify it\n\nIn this example you can create file in internal storage and then open it. Additionally, you can create cache file in internal storage. You can try delete cache from phone settings.</string>
     <string name="external_text">External storage is placed on sdcard.</string>
     <string name="lrucache_text">LRUCache is </string>
-    <string name="shared_preferences_text">Shared preferences</string>
+    <string name="shared_preferences_text">Shared preferences allows you to save key-value pairs of primitive data types.\n\nPros: \n\nCons:\n\nExperience: if you call registerOnSharedPreferenceChangeListener, so you should call unregisterOnSharedPreferenceChangeListener in fragment onStop()</string>
     <string name="sqlite_text">SQLite</string>
     <string name="content_provider_text">Content provider</string>
+    <string name="hello_text_shared_preferences">Hello, %1$s!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragments</string>
 </resources>
