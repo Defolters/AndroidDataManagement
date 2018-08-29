@@ -18,7 +18,6 @@ import android.widget.TextView;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
@@ -106,11 +105,18 @@ public class InternalStorageFragment extends Fragment {
         alertDialog.setTitle("Create file");
 
         final LayoutInflater inflater = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        final View dialogView = inflater.inflate(R.layout.create_file_dialog, null);
-        final EditText fileName = dialogView.findViewById(R.id.file_name);
-        final EditText fileText = dialogView.findViewById(R.id.file_text);
-        alertDialog.setView(dialogView);
+        final View dialogView = inflater.inflate(R.layout.two_input_dialog, null);
 
+        final TextView fileNameTextView = dialogView.findViewById(R.id.first_text_dialog);
+        fileNameTextView.setText("File name");
+
+        final TextView textTextView = dialogView.findViewById(R.id.second_text_dialog);
+        textTextView.setText("Enter text");
+
+        final EditText fileName = dialogView.findViewById(R.id.first_edit_text);
+        final EditText fileText = dialogView.findViewById(R.id.second_edit_text);
+
+        alertDialog.setView(dialogView);
         alertDialog.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

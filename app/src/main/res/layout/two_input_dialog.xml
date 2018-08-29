@@ -7,22 +7,24 @@
     android:padding="16dp">
 
     <TextView
+        android:id="@+id/first_text_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="File name"/>
+        android:text="First"/>
 
     <EditText
-        android:id="@+id/file_name"
+        android:id="@+id/first_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <TextView
+        android:id="@+id/second_text_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter text"/>
+        android:text="Second"/>
 
     <EditText
-        android:id="@+id/file_text"
+        android:id="@+id/second_edit_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

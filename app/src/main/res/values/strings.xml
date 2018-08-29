@@ -16,8 +16,8 @@
     <string name="external_text">External storage is placed on sdcard.</string>
     <string name="lrucache_text">LRUCache is </string>
     <string name="shared_preferences_text">Shared preferences allows you to save key-value pairs of primitive data types.\n\nPros: \n\nCons:\n\nExperience: if you call registerOnSharedPreferenceChangeListener, so you should call unregisterOnSharedPreferenceChangeListener in fragment onStop()</string>
-    <string name="sqlite_text">SQLite</string>
-    <string name="content_provider_text">Content provider</string>
+    <string name="sqlite_text">SQLite provides ability to save a lot of data.\n\nPros:\n\nCons:</string>
+    <string name="content_provider_text">Content provider allows other applications access to private data.\n\nNow you can run Content Provider Demo and load data from this application</string>
     <string name="hello_text_shared_preferences">Hello, %1$s!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragments</string>

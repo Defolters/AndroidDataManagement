@@ -36,7 +36,7 @@ public class SharedPreferencesFragment extends Fragment {
 
         final SharedPreferences sharedPreferences = getActivity().getSharedPreferences(PREFS_NAME, 0);
         final TextView helloTextView = view.findViewById(R.id.hello_text_shared_preferences);
-        helloTextView.setText(sharedPreferences.getString("name",getString(R.string.hello_text_shared_preferences)));
+        helloTextView.setText(getString(R.string.hello_text_shared_preferences,sharedPreferences.getString("name",getString(R.string.hello_text_shared_preferences))));
 
         listener = new SharedPreferences.OnSharedPreferenceChangeListener() {
             @Override
