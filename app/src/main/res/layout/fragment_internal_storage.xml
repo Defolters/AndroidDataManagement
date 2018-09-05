@@ -23,6 +23,7 @@
             android:layout_height="wrap_content"
             android:text="Internal directory for app"
             android:textColor="@android:color/black"
+            android:textStyle="bold"
             android:textSize="18sp"
             android:paddingTop="10dp"
             android:gravity="center" />
@@ -65,6 +66,7 @@
             android:layout_height="wrap_content"
             android:text="Internal directory for app's temporary cache files"
             android:textColor="@android:color/black"
+            android:textStyle="bold"
             android:textSize="18sp"
             android:paddingTop="10dp"
             android:gravity="center"/>

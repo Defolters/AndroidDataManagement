@@ -11,13 +11,30 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="introduction">Hello!\nThis app will show you different ways of managing data in android</string>
-    <string name="assets_text">Assets is a data in apk of your application\n\nPros: Always packaged with application\n\nCons: You can\'t modify it\n\nYou can use it for purpose, when you need some data (text files, images, songs) available from the box.\n\nIn this example you can display directory and load file from assets.</string>
-    <string name="internal_text">Internal storage allows you to store data of your application. This data are private by default.\n\nPros: Always packaged with application\n\nCons: You can\'t modify it\n\nIn this example you can create file in internal storage and then open it. Additionally, you can create cache file in internal storage. You can try delete cache from phone settings.</string>
-    <string name="external_text">External storage is placed on sdcard.</string>
+    <string name="assets_text">Assets is a data in apk of your application\n\n
+        Pros: Data always comes with application\n\n
+        Cons: You can\'t modify it\n\n
+        You can use it when you need some data (text files, images, songs) available after installing.\n\n
+        In this example you can display assets directory and load picture from assets.</string>
+    <string name="internal_text">Internal storage allows you to store data of your application.
+        This data are private by default.\n\n
+        Pros: Internal storage is always available. Files private by default.\n\n
+        Cons: Files deletes with uninstalling of app.\n\n
+        In this example you can create file in internal storage and then open it.
+        Additionally, you can create cache file in internal storage.
+        You can try delete cache in phone settings and notice what kind of files has been vanished.</string>
+    <string name="external_text">External storage.\n\n
+        Pros: There is more space than in internal storage.\n\n
+        Cons: It\'s not always available. data is public. \n\n
+        In this example you can create, open and delete .txt files in public and private directories.</string>
     <string name="lrucache_text">LRUCache is </string>
-    <string name="shared_preferences_text">Shared preferences allows you to save key-value pairs of primitive data types.\n\nPros: \n\nCons:\n\nExperience: if you call registerOnSharedPreferenceChangeListener, so you should call unregisterOnSharedPreferenceChangeListener in fragment onStop()</string>
-    <string name="sqlite_text">SQLite provides ability to save a lot of data.\n\nPros:\n\nCons:</string>
-    <string name="content_provider_text">Content provider allows other applications access to private data.\n\Firstly, you can access system contacts and load information to our sql database and look at in sqlite section (tab right). Secondly, you can run Content Provider Demo and load data from this application in another.</string>
+    <string name="shared_preferences_text">Shared preferences allows you to save key-value pairs of primitive data types.\n\n
+        You can keep user\'s preferences and settings in shared preferences. </string>
+    <string name="sqlite_text">SQLite is a database, which provides ability to save a lot of data.\n\n
+        In this example you can add value to database and clear all values.</string>
+    <string name="content_provider_text">Content provider allows other applications access to private data.
+        \n\Firstly, you can access system contacts and load information to our sql database and look at in
+        sqlite section (tab right). Secondly, you can run Content Provider Demo and load data from this application in another.</string>
     <string name="hello_text_shared_preferences">Hello, %1$s!</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragments</string>

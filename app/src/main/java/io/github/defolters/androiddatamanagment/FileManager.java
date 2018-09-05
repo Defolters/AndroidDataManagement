@@ -55,16 +55,15 @@ public class FileManager {
         AlertDialog.Builder alertDialog = new AlertDialog.Builder(activity);
         alertDialog.setTitle("Select file");
 
-//        final String[] files = path.list(new FilenameFilter() {
-//            @Override
-//            public boolean accept(File dir, String name) {
-//                if (name.endsWith(".txt")) {
-//                    return true;
-//                }
-//                return false;
-//            }
-//        });
-        final String[] files = path.list();
+        final String[] files = path.list(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                if (name.endsWith(".txt")) {
+                    return true;
+                }
+                return false;
+            }
+        });
 
         alertDialog.setItems(files, new DialogInterface.OnClickListener() {
             @Override

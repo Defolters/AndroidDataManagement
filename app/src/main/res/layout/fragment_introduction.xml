@@ -3,15 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.IntroductionFragment"
-    >
+    tools:context=".fragments.IntroductionFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/intro"
+        android:id="@+id/introduction"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text="@string/introduction"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textStyle="italic"/>
 
 </FrameLayout>

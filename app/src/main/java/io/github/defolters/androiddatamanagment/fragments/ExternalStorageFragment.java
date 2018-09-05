@@ -48,6 +48,12 @@ public class ExternalStorageFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_external_storage, container, false);
 
+        final TextView publicDirectoryTextView = view.findViewById(R.id.external_public_directory);
+        publicDirectoryTextView.setText("Location: "+ getPublicDocumentsDirectory());
+
+        final TextView privateDirectoryTextView = view.findViewById(R.id.external_private_directory);
+        privateDirectoryTextView.setText("Cache location: "+ getPrivateDocumentsDirectory(getActivity()));
+
         Button createPublicFile = view.findViewById(R.id.external_public_create_file_button);
         Button openPublicFile = view.findViewById(R.id.external_public_open_file_button);
         Button deletePublicFile = view.findViewById(R.id.external_public_delete_file_button);
@@ -56,7 +62,7 @@ public class ExternalStorageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (isExternalStorageWritable()) {
-                    FileManager.createFileDialog(getPublicDocumentsDirectory("doc"), getActivity());
+                    FileManager.createFileDialog(getPublicDocumentsDirectory(), getActivity());
                 }
             }
         });
@@ -65,7 +71,7 @@ public class ExternalStorageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (isExternalStorageReadable()) {
-                    FileManager.openFileDialog(getPublicDocumentsDirectory("doc"), getActivity());
+                    FileManager.openFileDialog(getPublicDocumentsDirectory(), getActivity());
                 }
             }
         });
@@ -74,7 +80,7 @@ public class ExternalStorageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (isExternalStorageWritable()) {
-                    FileManager.deleteFileDialog(getPublicDocumentsDirectory("doc"), getActivity());
+                    FileManager.deleteFileDialog(getPublicDocumentsDirectory(), getActivity());
                 }
             }
         });
@@ -87,7 +93,7 @@ public class ExternalStorageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (isExternalStorageWritable()) {
-                    FileManager.createFileDialog(getPrivateDocumentsDirectory("doc", getActivity()), getActivity());
+                    FileManager.createFileDialog(getPrivateDocumentsDirectory(getActivity()), getActivity());
                 }
             }
         });
@@ -96,7 +102,7 @@ public class ExternalStorageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (isExternalStorageReadable()) {
-                    FileManager.openFileDialog(getPrivateDocumentsDirectory("doc", getActivity()), getActivity());
+                    FileManager.openFileDialog(getPrivateDocumentsDirectory(getActivity()), getActivity());
                 }
             }
         });
@@ -105,11 +111,72 @@ public class ExternalStorageFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if (isExternalStorageWritable()) {
-                    FileManager.deleteFileDialog(getPrivateDocumentsDirectory("doc", getActivity()), getActivity());
+                    FileManager.deleteFileDialog(getPrivateDocumentsDirectory(getActivity()), getActivity());
                 }
             }
         });
 
+        return view;
+    }
+
+
+    public boolean isExternalStorageWritable() {
+        if (!isPermissionGranted()) {
+            return false;
+        }
+
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public boolean isExternalStorageReadable() {
+        if (!isPermissionGranted()) {
+            return false;
+        }
+
+        String state = Environment.getExternalStorageState();
+        if (Environment.MEDIA_MOUNTED.equals(state) ||
+                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
+            return true;
+        }
+        return false;
+    }
+
+
+    public File getPublicDocumentsDirectory() {
+        File file = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_DOCUMENTS).toURI());
+        if (!file.mkdirs()) {
+            Log.e("PUBLIC_DIR", "Directory not created");
+        }
+        Log.d("PUBLIC_DIR", file.toString());
+
+        return file;
+    }
+
+
+    public File getPrivateDocumentsDirectory(Context context) {
+        File file = new File(context.getExternalFilesDir(
+                Environment.DIRECTORY_DOCUMENTS).toURI());
+        if (!file.mkdirs()) {
+            Log.e("PRIVATE_DIR", "Directory not created");
+        }
+        Log.d("PRIVATE_DIR", file.toString());
+
+        return file;
+    }
+
+
+    /**
+     * Check if permission granted and shows dialog, which request permission, if permission
+     * is not granted.
+     * @return true if granted, false if not granted
+     */
+    public boolean isPermissionGranted() {
         if (ContextCompat.checkSelfPermission(getActivity(),
                 Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
             // Permission is not granted
@@ -124,47 +191,8 @@ public class ExternalStorageFragment extends Fragment {
             });
 
             content.show();
+            return false;
         }
-
-        return view;
-    }
-
-    public boolean isExternalStorageWritable() {
-        String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state)) {
-            return true;
-        }
-        return false;
-    }
-
-    public boolean isExternalStorageReadable() {
-        String state = Environment.getExternalStorageState();
-        if (Environment.MEDIA_MOUNTED.equals(state) ||
-                Environment.MEDIA_MOUNTED_READ_ONLY.equals(state)) {
-            return true;
-        }
-        return false;
-    }
-
-    public File getPublicDocumentsDirectory(String folderName) {
-        File file = new File(Environment.getExternalStoragePublicDirectory(
-                Environment.DIRECTORY_DOCUMENTS), folderName);
-        if (!file.mkdirs()) {
-            Log.e("PUBLIC_DIR", "Directory not created");
-        }
-        Log.d("PUBLIC_DIR", file.toString());
-
-        return file;
-    }
-
-    public File getPrivateDocumentsDirectory(String folderName, Context context) {
-        File file = new File(context.getExternalFilesDir(
-                Environment.DIRECTORY_DOCUMENTS).toURI());
-        if (!file.mkdirs()) {
-            Log.e("PRIVATE_DIR", "Directory not created");
-        }
-        Log.d("PRIVATE_DIR", file.toString());
-
-        return file;
+        return true;
     }
 }
