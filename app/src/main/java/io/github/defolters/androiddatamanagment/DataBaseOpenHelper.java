@@ -46,7 +46,7 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
         }
     }
 
-    public void addValue(String first, String second) {
+    public void addEntry(String first, String second) {
         SQLiteDatabase database = getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("FIRST",first);
@@ -54,7 +54,22 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
         database.insert(DATABASE_TABLE_NAME, null, values);
         database.close();
 
-        Log.d("TEST DATA", "addValue(): " + first + " " + second);
+        Log.d("TEST DATA", "addEntry(): " + first + " " + second);
+    }
+
+    public void addEntries(ArrayList<Entry> entries) {
+        SQLiteDatabase database = getWritableDatabase();
+
+        for (Entry entry : entries) {
+            ContentValues values = new ContentValues();
+            values.put("FIRST", entry.getFirst());
+            values.put("SECOND",entry.getSecond());
+            database.insert(DATABASE_TABLE_NAME, null, values);
+        }
+
+        database.close();
+
+        Log.d("DATABASE", "addEntries()");
     }
 
     public void clear() {

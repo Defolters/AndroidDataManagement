@@ -4,7 +4,6 @@ package io.github.defolters.androiddatamanagment.fragments;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
@@ -15,10 +14,6 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import io.github.defolters.androiddatamanagment.ExpandableListView;
 import io.github.defolters.androiddatamanagment.ListAdapter;
@@ -68,7 +63,7 @@ public class SQLiteFragment extends Fragment implements AdapterView.OnItemClickL
                 builder.setPositiveButton("Add", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        dataBaseOpenHelper.addValue(firstEditText.getText().toString(),
+                        dataBaseOpenHelper.addEntry(firstEditText.getText().toString(),
                                                     secondEditText.getText().toString());
                         Snackbar.make(getActivity().findViewById(android.R.id.content),
                                 "value added", Snackbar.LENGTH_SHORT).show();
@@ -88,6 +83,18 @@ public class SQLiteFragment extends Fragment implements AdapterView.OnItemClickL
             @Override
             public void onClick(View v) {
                 dataBaseOpenHelper.clear();
+                listAdapter = new ListAdapter(getActivity(), dataBaseOpenHelper.getEntries());
+                listView.setAdapter(listAdapter);
+                listAdapter.notifyDataSetChanged();
+            }
+        });
+
+        Button updateButton = view.findViewById(R.id.update_sqlite);
+        updateButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listAdapter = new ListAdapter(getActivity(), dataBaseOpenHelper.getEntries());
+                listView.setAdapter(listAdapter);
                 listAdapter.notifyDataSetChanged();
             }
         });
