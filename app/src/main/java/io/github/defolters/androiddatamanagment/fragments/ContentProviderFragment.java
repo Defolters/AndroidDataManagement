@@ -3,8 +3,6 @@ package io.github.defolters.androiddatamanagment.fragments;
 
 import android.Manifest;
 import android.content.ContentResolver;
-import android.content.Context;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -22,7 +20,7 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-import io.github.defolters.androiddatamanagment.DataBaseOpenHelper;
+import io.github.defolters.androiddatamanagment.data.DataBaseOpenHelper;
 import io.github.defolters.androiddatamanagment.Entry;
 import io.github.defolters.androiddatamanagment.R;
 

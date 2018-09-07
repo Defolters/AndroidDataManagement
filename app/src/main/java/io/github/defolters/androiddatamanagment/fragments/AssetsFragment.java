@@ -47,7 +47,7 @@ public class AssetsFragment extends Fragment {
                             "cat.jpg loaded from assets", Snackbar.LENGTH_LONG).show();
                 }
                 else {
-                    Snackbar.make(getActivity().findViewById(android.R.id.content),
+                        Snackbar.make(getActivity().findViewById(android.R.id.content),
                             "cat.jpg is already loaded", Snackbar.LENGTH_LONG).show();
                 }
             }

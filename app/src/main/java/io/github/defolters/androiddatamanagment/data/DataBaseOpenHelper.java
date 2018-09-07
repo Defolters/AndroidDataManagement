@@ -1,4 +1,4 @@
-package io.github.defolters.androiddatamanagment;
+package io.github.defolters.androiddatamanagment.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -9,17 +9,20 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import io.github.defolters.androiddatamanagment.Entry;
 
 public class DataBaseOpenHelper extends SQLiteOpenHelper {
     private static DataBaseOpenHelper dataBaseOpenHelper = null;
+    private static String DEBUG_TAG = "DataBaseOpenHelper";
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_TABLE_NAME = "test";
+    private static final String COL_FIRST = "FIRST";
+    private static final String COL_SECOND = "SECOND";
     private static final String DATABASE_TABLE_CREATE =
             "CREATE TABLE " + DATABASE_TABLE_NAME + " (" +
-            "FIRST TEXT, " +
-            "SECOND TEXT" +
-            ");";
+            COL_FIRST + " TEXT, " +
+            COL_SECOND + " TEXT);";
 
 
     private DataBaseOpenHelper(Context context) {
@@ -33,7 +36,11 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        // TODO: make good onUpgrade() method
+        Log.w(DEBUG_TAG, "Upgrading database. Existing contents will be lost. ["
+                + oldVersion + "]->[" + newVersion + "]");
+        db.execSQL("DROP TABLE IF EXISTS " + DATABASE_TABLE_NAME);
+        onCreate(db);
     }
 
     public static DataBaseOpenHelper getDataBaseOpenHelper(Context context) {
@@ -49,12 +56,12 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
     public void addEntry(String first, String second) {
         SQLiteDatabase database = getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put("FIRST",first);
-        values.put("SECOND",second);
+        values.put(COL_FIRST,first);
+        values.put(COL_SECOND,second);
         database.insert(DATABASE_TABLE_NAME, null, values);
         database.close();
 
-        Log.d("TEST DATA", "addEntry(): " + first + " " + second);
+        Log.d(DEBUG_TAG, "addEntry(): " + first + " " + second);
     }
 
     public void addEntries(ArrayList<Entry> entries) {
@@ -62,14 +69,14 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
 
         for (Entry entry : entries) {
             ContentValues values = new ContentValues();
-            values.put("FIRST", entry.getFirst());
-            values.put("SECOND",entry.getSecond());
+            values.put(COL_FIRST, entry.getFirst());
+            values.put(COL_SECOND,entry.getSecond());
             database.insert(DATABASE_TABLE_NAME, null, values);
         }
 
         database.close();
 
-        Log.d("DATABASE", "addEntries()");
+        Log.d(DEBUG_TAG, "addEntries()");
     }
 
     public void clear() {
@@ -85,7 +92,7 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
         int count = (int) DatabaseUtils.queryNumEntries(db, DATABASE_TABLE_NAME);
         db.close();
 
-        Log.d("TEST DATA", "getCount(): " + count);
+        Log.d(DEBUG_TAG, "getCount(): " + count);
         return count;
 //
 //        final String regionQuery = "select Count(*) as count from test";
@@ -109,7 +116,7 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
     }
 
     public ArrayList<Entry> getEntries() {
-        Log.d("TEST_DATA", "DB getEntries:");
+        Log.d(DEBUG_TAG, "DB getEntries:");
 
         ArrayList<Entry> entries = new ArrayList<>();
         SQLiteDatabase database = getReadableDatabase();
@@ -123,7 +130,7 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
         database.close();
 
 
-        Log.d("TEST_DATA", "DB size:" + entries.size());
+        Log.d(DEBUG_TAG, "DB size:" + entries.size());
         return entries;
     }
 }

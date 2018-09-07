@@ -18,7 +18,7 @@ import android.widget.EditText;
 import io.github.defolters.androiddatamanagment.ExpandableListView;
 import io.github.defolters.androiddatamanagment.ListAdapter;
 import io.github.defolters.androiddatamanagment.R;
-import io.github.defolters.androiddatamanagment.DataBaseOpenHelper;
+import io.github.defolters.androiddatamanagment.data.DataBaseOpenHelper;
 
 /**
  * A simple {@link Fragment} subclass.
