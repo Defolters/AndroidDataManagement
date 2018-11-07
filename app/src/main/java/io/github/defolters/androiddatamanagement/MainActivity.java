@@ -1,4 +1,4 @@
-package io.github.defolters.androiddatamanagment;
+package io.github.defolters.androiddatamanagement;
 
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -22,14 +22,14 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.github.defolters.androiddatamanagment.fragments.AssetsFragment;
-import io.github.defolters.androiddatamanagment.fragments.ContentProviderFragment;
-import io.github.defolters.androiddatamanagment.fragments.ExternalStorageFragment;
-import io.github.defolters.androiddatamanagment.fragments.InternalStorageFragment;
-import io.github.defolters.androiddatamanagment.fragments.IntroductionFragment;
-import io.github.defolters.androiddatamanagment.fragments.LRUCacheFragment;
-import io.github.defolters.androiddatamanagment.fragments.SQLiteFragment;
-import io.github.defolters.androiddatamanagment.fragments.SharedPreferencesFragment;
+import io.github.defolters.androiddatamanagement.fragments.AssetsFragment;
+import io.github.defolters.androiddatamanagement.fragments.ContentProviderFragment;
+import io.github.defolters.androiddatamanagement.fragments.ExternalStorageFragment;
+import io.github.defolters.androiddatamanagement.fragments.InternalStorageFragment;
+import io.github.defolters.androiddatamanagement.fragments.IntroductionFragment;
+import io.github.defolters.androiddatamanagement.fragments.LRUCacheFragment;
+import io.github.defolters.androiddatamanagement.fragments.SQLiteFragment;
+import io.github.defolters.androiddatamanagement.fragments.SharedPreferencesFragment;
 
 public class MainActivity extends AppCompatActivity {
 

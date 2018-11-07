@@ -1,4 +1,4 @@
-package io.github.defolters.androiddatamanagment.fragments;
+package io.github.defolters.androiddatamanagement.fragments;
 
 
 import android.app.AlertDialog;
@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import io.github.defolters.androiddatamanagment.R;
+import io.github.defolters.androiddatamanagement.R;
 
 /**
  * A simple {@link Fragment} subclass.

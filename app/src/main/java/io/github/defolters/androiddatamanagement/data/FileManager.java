@@ -1,4 +1,4 @@
-package io.github.defolters.androiddatamanagment.data;
+package io.github.defolters.androiddatamanagement.data;
 
 import android.app.Activity;
 import android.content.Context;
@@ -19,7 +19,7 @@ import java.io.FilenameFilter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import io.github.defolters.androiddatamanagment.R;
+import io.github.defolters.androiddatamanagement.R;
 
 public class FileManager {
 

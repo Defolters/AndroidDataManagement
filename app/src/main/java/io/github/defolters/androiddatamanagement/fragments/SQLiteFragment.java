@@ -1,4 +1,4 @@
-package io.github.defolters.androiddatamanagment.fragments;
+package io.github.defolters.androiddatamanagement.fragments;
 
 
 import android.app.AlertDialog;
@@ -15,10 +15,10 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 
-import io.github.defolters.androiddatamanagment.ExpandableListView;
-import io.github.defolters.androiddatamanagment.ListAdapter;
-import io.github.defolters.androiddatamanagment.R;
-import io.github.defolters.androiddatamanagment.data.DataBaseOpenHelper;
+import io.github.defolters.androiddatamanagement.ExpandableListView;
+import io.github.defolters.androiddatamanagement.ListAdapter;
+import io.github.defolters.androiddatamanagement.R;
+import io.github.defolters.androiddatamanagement.data.DataBaseOpenHelper;
 
 /**
  * A simple {@link Fragment} subclass.

@@ -41,7 +41,7 @@
 
         </LinearLayout>
 
-        <io.github.defolters.androiddatamanagment.ExpandableListView
+        <io.github.defolters.androiddatamanagement.ExpandableListView
             android:id="@+id/db_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

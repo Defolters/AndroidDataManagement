@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.github.defolters.androiddatamanagment">
+    package="io.github.defolters.androiddatamanagement">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -22,6 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
+        <provider
+            android:authorities="io.github.defolters.androiddatamanagement.data.SimpleContentProvider"
+            android:multiprocess="true"
+            android:exported="true"
+            android:name="io.github.defolters.androiddatamanagement.data.SimpleContentProvider"/>
     </application>
 
 

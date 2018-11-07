@@ -1,4 +1,4 @@
-package io.github.defolters.androiddatamanagment.fragments;
+package io.github.defolters.androiddatamanagement.fragments;
 
 
 import android.Manifest;
@@ -19,8 +19,8 @@ import android.widget.TextView;
 
 import java.io.File;
 
-import io.github.defolters.androiddatamanagment.data.FileManager;
-import io.github.defolters.androiddatamanagment.R;
+import io.github.defolters.androiddatamanagement.data.FileManager;
+import io.github.defolters.androiddatamanagement.R;
 
 /**
  * A simple {@link Fragment} subclass.

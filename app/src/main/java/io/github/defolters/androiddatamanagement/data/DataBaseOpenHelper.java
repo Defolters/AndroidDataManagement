@@ -1,4 +1,4 @@
-package io.github.defolters.androiddatamanagment.data;
+package io.github.defolters.androiddatamanagement.data;
 
 import android.content.ContentValues;
 import android.content.Context;
@@ -10,19 +10,20 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import io.github.defolters.androiddatamanagment.Entry;
+import io.github.defolters.androiddatamanagement.Entry;
 
 public class DataBaseOpenHelper extends SQLiteOpenHelper {
     private static DataBaseOpenHelper dataBaseOpenHelper = null;
     private static String DEBUG_TAG = "DataBaseOpenHelper";
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_TABLE_NAME = "test";
-    private static final String COL_FIRST = "FIRST";
-    private static final String COL_SECOND = "SECOND";
+    public static final String DATABASE_TABLE_NAME = "test";
+    public static final String COL_FIRST = "FIRST";
+    public static final String COL_SECOND = "SECOND";
     private static final String DATABASE_TABLE_CREATE =
             "CREATE TABLE " + DATABASE_TABLE_NAME + " (" +
             COL_FIRST + " TEXT, " +
             COL_SECOND + " TEXT);";
+    public static final String TABLE_DATA = "data";
 
 
     private DataBaseOpenHelper(Context context) {

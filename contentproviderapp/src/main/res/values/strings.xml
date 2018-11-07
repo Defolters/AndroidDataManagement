@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ContentProviderApp</string>
+    <string name="app_description">This application allows you to access data from main application</string>
+    <string name="load_button">load data from content provider</string>
 </resources>

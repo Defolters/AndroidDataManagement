@@ -1,4 +1,5 @@
-package io.github.defolters.androiddatamanagment;
+package io.github.defolters.contentproviderapp;
+
 
 public class Entry {
     private String first;

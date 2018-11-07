@@ -1,4 +1,4 @@
-package io.github.defolters.androiddatamanagment;
+package io.github.defolters.androiddatamanagement;
 
 import org.junit.Test;
 
