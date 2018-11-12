@@ -40,10 +40,10 @@ public class ExternalStorageFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_external_storage, container, false);
 
         final TextView publicDirectoryTextView = view.findViewById(R.id.external_public_directory);
-        publicDirectoryTextView.setText("Location: "+ getPublicDocumentsDirectory());
-
         final TextView privateDirectoryTextView = view.findViewById(R.id.external_private_directory);
-        privateDirectoryTextView.setText("Cache location: "+ getPrivateDocumentsDirectory(getActivity()));
+
+        publicDirectoryTextView.setText("Location: " + getPublicDocumentsDirectory());
+        privateDirectoryTextView.setText("Cache location: " + getPrivateDocumentsDirectory(getActivity()));
 
         Button createPublicFile = view.findViewById(R.id.external_public_create_file_button);
         Button openPublicFile = view.findViewById(R.id.external_public_open_file_button);
@@ -141,6 +141,7 @@ public class ExternalStorageFragment extends Fragment {
     public File getPublicDocumentsDirectory() {
         File file = new File(Environment.getExternalStoragePublicDirectory(
                 Environment.DIRECTORY_DOCUMENTS).toURI());
+
         if (!file.mkdirs()) {
             Log.e("PUBLIC_DIR", "Directory not created");
         }
@@ -170,6 +171,7 @@ public class ExternalStorageFragment extends Fragment {
     public boolean isPermissionGranted() {
         if (ContextCompat.checkSelfPermission(getActivity(),
                 Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+
             // Permission is not granted
             AlertDialog.Builder content = new AlertDialog.Builder(getActivity());
             content.setTitle("Warning");

@@ -18,15 +18,6 @@ public class SimpleContentProvider extends ContentProvider {
     public static final int DATA = 1;
     public static final int DATA_ID = 2;
 
-    private static final String DATA_BASE_PATH = "/data";
-
-    public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + PATH);
-
-    public static final String CONTENT_ITEM_TYPE = ContentResolver.CURSOR_ITEM_BASE_TYPE
-            + "/cp-data";
-    public static final String CONTENT_TYPE = ContentResolver.CURSOR_DIR_BASE_TYPE
-            + "/cp-data";
-
     private static final UriMatcher sURIMatcher = new UriMatcher(UriMatcher.NO_MATCH);
     static {
         sURIMatcher.addURI(AUTHORITY, PATH, DATA);

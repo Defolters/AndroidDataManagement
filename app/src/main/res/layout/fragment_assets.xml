@@ -23,7 +23,7 @@
             android:id="@+id/assets_directory_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="get assets directory"/>
+            android:text="@string/get_assets_directory"/>
 
         <TextView
             android:id="@+id/assets_directory"
@@ -39,13 +39,13 @@
                 android:id="@+id/assets_load_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="load cat.jpg" />
+                android:text="@string/assets_load_button" />
 
             <Button
                 android:id="@+id/assets_hide_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="hide" />
+                android:text="@string/assets_hide_button" />
 
         </LinearLayout>
 

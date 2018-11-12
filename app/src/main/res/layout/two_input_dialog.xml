@@ -10,7 +10,7 @@
         android:id="@+id/first_text_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="First"/>
+        android:text="@string/first"/>
 
     <EditText
         android:id="@+id/first_edit_text"
@@ -21,7 +21,7 @@
         android:id="@+id/second_text_dialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Second"/>
+        android:text="@string/second"/>
 
     <EditText
         android:id="@+id/second_edit_text"

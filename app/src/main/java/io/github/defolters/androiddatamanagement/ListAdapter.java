@@ -9,7 +9,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.lang.ref.WeakReference;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class ListAdapter extends BaseAdapter {
@@ -38,8 +37,7 @@ public class ListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Log.d("TEST_DATA", "getView(): " + position);
-        ViewHolder viewHolder = null;
+        ViewHolder viewHolder;
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) mContextWeakReference.get().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -63,7 +61,7 @@ public class ListAdapter extends BaseAdapter {
     }
 
     private static class ViewHolder {
-        public TextView first;
-        public TextView second;
+        TextView first;
+        TextView second;
     }
 }

@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                         entries.add(entry);
                     } while (cursor.moveToNext());
                     Log.w("CONTENT_PROVIDER", "Some data to show");
-                    Log.w("CONTENT_PROVIDER", ""+entries.size());
 
                 } else {
                     Log.w("CONTENT_PROVIDER", "Nothing to show");

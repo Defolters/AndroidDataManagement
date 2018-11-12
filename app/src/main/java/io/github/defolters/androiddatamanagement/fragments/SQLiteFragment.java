@@ -41,11 +41,11 @@ public class SQLiteFragment extends Fragment implements AdapterView.OnItemClickL
 
         dataBaseOpenHelper = DataBaseOpenHelper.getDataBaseOpenHelper(getActivity());
         listAdapter = new ListAdapter(getActivity(), dataBaseOpenHelper.getEntries());
-        final ExpandableListView listView = view.findViewById(R.id.db_list);
-        listView.setExpanded(true);
+
+        final ExpandableListView dataBaselistView = view.findViewById(R.id.db_list);
+        dataBaselistView.setExpanded(true);
         listAdapter.notifyDataSetChanged();
-        listView.setAdapter(listAdapter);
-//        listView.setOnItemClickListener(this);
+        dataBaselistView.setAdapter(listAdapter);
 
         Button addButton = view.findViewById(R.id.add_sqlite);
         addButton.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +68,7 @@ public class SQLiteFragment extends Fragment implements AdapterView.OnItemClickL
                         Snackbar.make(getActivity().findViewById(android.R.id.content),
                                 "value added", Snackbar.LENGTH_SHORT).show();
                         listAdapter = new ListAdapter(getActivity(), dataBaseOpenHelper.getEntries());
-                        listView.setAdapter(listAdapter);
+                        dataBaselistView.setAdapter(listAdapter);
                         listAdapter.notifyDataSetChanged();
                     }
                 });
@@ -84,7 +84,7 @@ public class SQLiteFragment extends Fragment implements AdapterView.OnItemClickL
             public void onClick(View v) {
                 dataBaseOpenHelper.clear();
                 listAdapter = new ListAdapter(getActivity(), dataBaseOpenHelper.getEntries());
-                listView.setAdapter(listAdapter);
+                dataBaselistView.setAdapter(listAdapter);
                 listAdapter.notifyDataSetChanged();
             }
         });
@@ -94,7 +94,7 @@ public class SQLiteFragment extends Fragment implements AdapterView.OnItemClickL
             @Override
             public void onClick(View v) {
                 listAdapter = new ListAdapter(getActivity(), dataBaseOpenHelper.getEntries());
-                listView.setAdapter(listAdapter);
+                dataBaselistView.setAdapter(listAdapter);
                 listAdapter.notifyDataSetChanged();
             }
         });

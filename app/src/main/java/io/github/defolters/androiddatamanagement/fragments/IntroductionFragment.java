@@ -18,7 +18,6 @@ import ru.noties.markwon.Markwon;
  */
 public class IntroductionFragment extends Fragment {
 
-    private View view;
 
     public IntroductionFragment() {
         // Required empty public constructor
@@ -29,9 +28,7 @@ public class IntroductionFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        view = inflater.inflate(R.layout.fragment_introduction, container, false);
-
-        return view;
+        return inflater.inflate(R.layout.fragment_introduction, container, false);
     }
 
 }

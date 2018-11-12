@@ -37,23 +37,29 @@ public class AssetsFragment extends Fragment {
 
         final ImageView imageView = view.findViewById(R.id.assets_image);
         final Button loadButton = view.findViewById(R.id.assets_load_button);
+        final TextView directoryView = view.findViewById(R.id.assets_directory);
+        final Button directoryButton = view.findViewById(R.id.assets_directory_button);
+        final Button hideButton = view.findViewById(R.id.assets_hide_button);
+
+
         loadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (imageView.getDrawable() == null) {
+
                     imageView.setImageBitmap(getBitmapFromAssets("cat.jpg"));
                     Snackbar.make(getActivity().findViewById(android.R.id.content),
                             "cat.jpg loaded from assets", Snackbar.LENGTH_LONG).show();
                 }
                 else {
+
                         Snackbar.make(getActivity().findViewById(android.R.id.content),
                             "cat.jpg is already loaded", Snackbar.LENGTH_LONG).show();
                 }
             }
         });
 
-        final Button hideButton = view.findViewById(R.id.assets_hide_button);
         hideButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,13 +70,14 @@ public class AssetsFragment extends Fragment {
             }
         });
 
-        final TextView directoryView = view.findViewById(R.id.assets_directory);
-
-        final Button directoryButton = view.findViewById(R.id.assets_directory_button);
         directoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AssetManager assetManager = getActivity().getAssets();
+
+                if (assetManager == null) {
+                    return;
+                }
 
                 try {
                     String directory = "";
@@ -91,6 +98,10 @@ public class AssetsFragment extends Fragment {
     public Bitmap getBitmapFromAssets(String fileName) {
         try {
             AssetManager assetManager = getActivity().getAssets();
+
+            if (assetManager == null) {
+                return null;
+            }
 
             InputStream inputStream = assetManager.open(fileName);
             Bitmap bitmap = BitmapFactory.decodeStream(inputStream);

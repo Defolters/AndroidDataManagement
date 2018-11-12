@@ -119,6 +119,6 @@ public class ContentProviderFragment extends Fragment {
 
         dataBaseOpenHelper.addEntries(contacts);
         Snackbar.make(getActivity().findViewById(android.R.id.content),
-                "Contacts loaded", Snackbar.LENGTH_LONG).show();
+                "Contacts loaded, update sqlite page", Snackbar.LENGTH_LONG).show();
     }
 }

@@ -1,8 +1,6 @@
 package io.github.defolters.androiddatamanagement;
 
 import android.support.design.widget.TabLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
@@ -27,7 +25,6 @@ import io.github.defolters.androiddatamanagement.fragments.ContentProviderFragme
 import io.github.defolters.androiddatamanagement.fragments.ExternalStorageFragment;
 import io.github.defolters.androiddatamanagement.fragments.InternalStorageFragment;
 import io.github.defolters.androiddatamanagement.fragments.IntroductionFragment;
-import io.github.defolters.androiddatamanagement.fragments.LRUCacheFragment;
 import io.github.defolters.androiddatamanagement.fragments.SQLiteFragment;
 import io.github.defolters.androiddatamanagement.fragments.SharedPreferencesFragment;
 
@@ -55,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -62,10 +60,9 @@ public class MainActivity extends AppCompatActivity {
         mSectionsPagerAdapter.addFragment(new AssetsFragment(), getString(R.string.tab_text_2));
         mSectionsPagerAdapter.addFragment(new InternalStorageFragment(), getString(R.string.tab_text_3));
         mSectionsPagerAdapter.addFragment(new ExternalStorageFragment(), getString(R.string.tab_text_4));
-        mSectionsPagerAdapter.addFragment(new LRUCacheFragment(), getString(R.string.tab_text_5));
-        mSectionsPagerAdapter.addFragment(new SharedPreferencesFragment(), getString(R.string.tab_text_6));
-        mSectionsPagerAdapter.addFragment(new SQLiteFragment(), getString(R.string.tab_text_7));
-        mSectionsPagerAdapter.addFragment(new ContentProviderFragment(), getString(R.string.tab_text_8));
+        mSectionsPagerAdapter.addFragment(new SharedPreferencesFragment(), getString(R.string.tab_text_5));
+        mSectionsPagerAdapter.addFragment(new SQLiteFragment(), getString(R.string.tab_text_6));
+        mSectionsPagerAdapter.addFragment(new ContentProviderFragment(), getString(R.string.tab_text_7));
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) findViewById(R.id.container);

@@ -23,7 +23,6 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
             "CREATE TABLE " + DATABASE_TABLE_NAME + " (" +
             COL_FIRST + " TEXT, " +
             COL_SECOND + " TEXT);";
-    public static final String TABLE_DATA = "data";
 
 
     private DataBaseOpenHelper(Context context) {
@@ -83,8 +82,7 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
     public void clear() {
         SQLiteDatabase database = getWritableDatabase();
         database.delete(DATABASE_TABLE_NAME, null, null);
-//        database.execSQL("DELETE FROM " + DATABASE_TABLE_NAME);
-//        database.execSQL("VACUUM");
+
         database.close();
     }
 
@@ -95,25 +93,6 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
 
         Log.d(DEBUG_TAG, "getCount(): " + count);
         return count;
-//
-//        final String regionQuery = "select Count(*) as count from test";
-//        Cursor cur = null;
-//        int result = 0;
-//        if (db != null) {
-//            try {
-//                cur = db.rawQuery(regionQuery, null);
-//                cur.moveToFirst();
-//                result = cur.getInt(cur.getColumnIndexOrThrow("count"));
-//            } catch (Exception ex) {
-//                ex.printStackTrace();
-//            } finally {
-//                if (cur != null) {
-//                    cur.close();
-//                }
-//                db.close();
-//            }
-//        }
-//        return result;
     }
 
     public ArrayList<Entry> getEntries() {
@@ -129,7 +108,6 @@ public class DataBaseOpenHelper extends SQLiteOpenHelper {
         }
 
         database.close();
-
 
         Log.d(DEBUG_TAG, "DB size:" + entries.size());
         return entries;

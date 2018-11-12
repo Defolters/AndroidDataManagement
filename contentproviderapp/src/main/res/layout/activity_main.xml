@@ -32,10 +32,7 @@
             android:layout_height="match_parent"
             tools:listitem="@layout/entry_item"
             app:layoutManager="android.support.v7.widget.LinearLayoutManager"/>
-        <!--<ListView-->
-            <!--android:id="@+id/list_view"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent" />-->
+
 
     </LinearLayout>
 

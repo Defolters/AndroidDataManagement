@@ -1,20 +1,20 @@
 <resources>
-    <string name="app_name">Android Data Managment</string>
+    <string name="app_name">Android Data Management</string>
     <string name="tab_text_1">Introduction</string>
     <string name="tab_text_2">Assets</string>
     <string name="tab_text_3">Internal storage</string>
     <string name="tab_text_4">External Storage</string>
-    <string name="tab_text_5">LRU Cache</string>
-    <string name="tab_text_6">Shared preferences</string>
-    <string name="tab_text_7">SQLite</string>
-    <string name="tab_text_8">Content Provider</string>
+    <string name="tab_text_5">Shared preferences</string>
+    <string name="tab_text_6">SQLite</string>
+    <string name="tab_text_7">Content Provider</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="introduction">Hello!\nThis app will show you different ways of managing data in android</string>
-    <string name="assets_text">Assets is a data in apk of your application\n\n
+    <string name="assets_text">
+        Assets is a data in apk of your application\n\n
         Pros: Data always comes with application\n\n
         Cons: You can\'t modify it\n\n
-        You can use it when you need some data (text files, images, songs) available after installing.\n\n
+        You can use it when you need some data (text files, images) available after installing immediately.\n\n
         In this example you can display assets directory and load picture from assets.</string>
     <string name="internal_text">Internal storage allows you to store data of your application.
         This data are private by default.\n\n
@@ -25,17 +25,33 @@
         You can try delete cache in phone settings and notice what kind of files has been vanished.</string>
     <string name="external_text">External storage.\n\n
         Pros: There is more space than in internal storage.\n\n
-        Cons: It\'s not always available. data is public. \n\n
+        Cons: It\'s not always available. Data is public. \n\n
         In this example you can create, open and delete .txt files in public and private directories.</string>
-    <string name="lrucache_text">LRUCache is </string>
     <string name="shared_preferences_text">Shared preferences allows you to save key-value pairs of primitive data types.\n\n
         You can keep user\'s preferences and settings in shared preferences. </string>
     <string name="sqlite_text">SQLite is a database, which provides ability to save a lot of data.\n\n
         In this example you can add value to database and clear all values.</string>
-    <string name="content_provider_text">Content provider allows other applications access to private data.
-        \n\Firstly, you can access system contacts and load information to our sql database and look at in
-        sqlite section (tab right). Secondly, you can run Content Provider Demo and load data from this application in another.</string>
+    <string name="content_provider_text">Content provider allows other applications access tp the private data.\n\n
+        Firstly, you can access system contacts and load information to our sql database and look at it in sqlite section (left tab).\n\n
+        Secondly, you can run Content Provider Demo and load data from this application.</string>
     <string name="hello_text_shared_preferences">Hello, %1$s!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragments</string>
+    <string name="get_assets_directory">get assets directory</string>
+    <string name="assets_load_button">load cat.jpg</string>
+    <string name="assets_hide_button">hide image</string>
+    <string name="load_contacts">load contacts</string>
+    <string name="public_directory">Public directory</string>
+    <string name="create_txt_file">create txt file</string>
+    <string name="open_file">open file</string>
+    <string name="delete_file">delete file</string>
+    <string name="private_directory">Private directory</string>
+    <string name="internal_directory_desc_1">Internal directory for app</string>
+    <string name="internal_directory_desc_2">Internal directory for app\'s temporary cache files</string>
+    <string name="create_cache_file">create cache file</string>
+    <string name="set_name">set name</string>
+    <string name="delete_name">delete name</string>
+    <string name="add_value">add value</string>
+    <string name="clear">clear</string>
+    <string name="update">update</string>
+    <string name="first">First</string>
+    <string name="second">Second</string>
 </resources>
