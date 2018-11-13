@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="20dp">
+    android:layout_height="60dp"
+    android:gravity="center_vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:paddingStart="5dp">
 
     <TextView
         android:id="@+id/first_text_view"
@@ -12,8 +17,6 @@
     <TextView
         android:id="@+id/second_text_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingStart="5dp"
-        android:paddingEnd="5dp" />
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
